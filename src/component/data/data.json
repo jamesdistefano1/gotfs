@@ -1,0 +1,32 @@
+[
+    {
+        "name": "jon snow",
+        "raw": 97,
+        "allies": ["robb stark", "arya stark", "ned stark", "sansa stark"]
+    },
+    {
+        "name": "tyrion lannister",
+        "raw": 20,
+        "allies": ["jaime lannister"]
+    },
+    {
+        "name": "jaime lannister",
+        "raw": 95,
+        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+    },
+    {
+        "name": "brienne of tarth",
+        "raw": 95,
+        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+    },
+    {
+        "name": "arya stark",
+        "raw": 92,
+        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+    },
+    {
+        "name": "the night king",
+        "raw": 97,
+        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+    }
+]

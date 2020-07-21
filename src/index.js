@@ -28,20 +28,41 @@ class App extends React.Component{
 class Generator extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      winner: ""
-    };
   }
+  evaluate(first, second){
+    var fighter;
+    var teamOneTally = 0;
+    var teamTwoTally = 0;
+    for(fighter of first){
+      var currentFighter = data.find(element => element.name===fighter);
+      teamOneTally+= currentFighter.raw;
+      var ally;
+      /*for (ally in currentFighter.allies){ // add points if allies are on team
+        if(ally.name===fighter.name)
+        else if(ally.name===)
+      }*/
+      //for (ally in currentFighter.enemies) // subtract points if enemies are on opposing team
+    }
+    for(fighter of second){
+      var currentFighter = data.find(element => element.name===fighter);
+      teamTwoTally += currentFighter.raw;
+      //for (ally in currentFighter.allies) // add points if allies are on team
+      //for (ally in currentFighter.enemies) // subtract points if enemies are on opposing team
+    }
+    if(teamOneTally>teamTwoTally) return "team 1";
+    else return "team 2";
+  }
+  /*
   evaluate(first, second){
     var firstFighter = data.find(element => element.name===first);
     var secondFighter = data.find(element => element.name===second);
     if(firstFighter.raw > secondFighter.raw) return firstFighter.name;
     else return secondFighter.name;
-  }
+  }*/
   render(){
     return(
       <div>
-        <h1>The winner is: {this.evaluate("jaime lannister", "tyrion lannister")}</h1>
+        <h1>The winner is: {this.evaluate(["jaime lannister", "jon snow"], ["arya stark", "jon snow"])}</h1>
       </div>
     );
   }

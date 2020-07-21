@@ -35,34 +35,40 @@ class Generator extends React.Component{
     var teamTwoTally = 0;
     for(fighter of first){
       var currentFighter = data.find(element => element.name===fighter);
+      var fighterAllies = currentFighter.allies;
+      var fighterEnemies = currentFighter.enemies;
       teamOneTally+= currentFighter.raw;
       var ally;
-      /*for (ally in currentFighter.allies){ // add points if allies are on team
-        if(ally.name===fighter.name)
-        else if(ally.name===)
-      }*/
-      //for (ally in currentFighter.enemies) // subtract points if enemies are on opposing team
+      var enemy;
+      for (ally of first){ // add points if allies are on team
+        if(fighterAllies.includes(ally)) teamOneTally+=25;
+      }
+      for (enemy of first){ // add points if allies are on team
+        if(fighterEnemies.includes(enemy)) teamOneTally-=25;
+      }
     }
     for(fighter of second){
       var currentFighter = data.find(element => element.name===fighter);
-      teamTwoTally += currentFighter.raw;
-      //for (ally in currentFighter.allies) // add points if allies are on team
-      //for (ally in currentFighter.enemies) // subtract points if enemies are on opposing team
+      var fighterAllies = currentFighter.allies;
+      var fighterEnemies = currentFighter.enemies;
+      teamTwoTally+= currentFighter.raw;
+      var ally;
+      var enemy;
+      for (ally of second){ // add points if allies are on team
+        if(fighterAllies.includes(ally)) teamTwoTally+=25;
+      }
+      for (enemy of second){ // add points if allies are on team
+        if(fighterEnemies.includes(enemy)) teamTwoTally-=25;
+      }
     }
-    if(teamOneTally>teamTwoTally) return "team 1";
-    else return "team 2";
+    if(teamOneTally>teamTwoTally) return ("team 1 is " + teamOneTally);
+    else if (teamTwoTally>teamOneTally) return ("team 2 is " + teamTwoTally);
+    else return "A tie! We BOTH lose!" // in homer simpson's voice
   }
-  /*
-  evaluate(first, second){
-    var firstFighter = data.find(element => element.name===first);
-    var secondFighter = data.find(element => element.name===second);
-    if(firstFighter.raw > secondFighter.raw) return firstFighter.name;
-    else return secondFighter.name;
-  }*/
   render(){
     return(
       <div>
-        <h1>The winner is: {this.evaluate(["jaime lannister", "jon snow"], ["arya stark", "jon snow"])}</h1>
+        <h1>The winner is: {this.evaluate(["arya stark", "the night king"], ["the night king", "arya stark"])}</h1>
       </div>
     );
   }

@@ -2,31 +2,37 @@
     {
         "name": "jon snow",
         "raw": 97,
-        "allies": ["robb stark", "arya stark", "ned stark", "sansa stark"]
+        "allies": ["robb stark", "arya stark", "ned stark", "sansa stark"],
+        "enemies": ["the night king"]
     },
     {
         "name": "tyrion lannister",
         "raw": 20,
-        "allies": ["jaime lannister"]
+        "allies": ["jaime lannister"],
+        "enemies": []
     },
     {
         "name": "jaime lannister",
-        "raw": 95,
-        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+        "raw": 97,
+        "allies": ["brienne of tarth"],
+        "enemies": ["arya stark"]
     },
     {
         "name": "brienne of tarth",
         "raw": 95,
-        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+        "allies": ["jaime lannister"],
+        "enemies": []
     },
     {
         "name": "arya stark",
         "raw": 92,
-        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+        "allies": ["jon snow"],
+        "enemies": ["jaime lannister"]
     },
     {
         "name": "the night king",
         "raw": 97,
-        "allies": ["tyrion lannister", "tywin lannister", "cersei lannister"]
+        "allies": [],
+        "enemies": ["arya stark", "jon snow"]
     }
 ]

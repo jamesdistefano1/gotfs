@@ -19,7 +19,33 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <Generator/>
+        <div className="characters">
+          <Character name="Tyrion Lannister"/>
+          <Character name="Jaime Lannister"/>
+          <Character name="Brienne of Tarth"/>
+          <Character name="Arya Stark"/>
+          <Character name="Jon Snow"/>
+          <Character name="The Night King"/>
+        </div>
+        <div className="generator">
+          <Generator/>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Character extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+
+    };
+  }
+  render(){
+    return(
+      <div>
+        <button className="square">{this.props.name}</button>
       </div>
     );
   }
@@ -67,7 +93,7 @@ class Generator extends React.Component{
   }
   render(){
     return(
-      <div>
+      <div className="generator">
         <h1>The winner is: {this.evaluate(["arya stark", "the night king"], ["the night king", "arya stark"])}</h1>
       </div>
     );

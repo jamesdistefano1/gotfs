@@ -43,7 +43,7 @@ class Generator extends React.Component{
       for (ally of first){ // add points if allies are on team
         if(fighterAllies.includes(ally)) teamOneTally+=25;
       }
-      for (enemy of first){ // add points if allies are on team
+      for (enemy of first){ // subtract points if enemies are on other team
         if(fighterEnemies.includes(enemy)) teamOneTally-=25;
       }
     }
@@ -57,7 +57,7 @@ class Generator extends React.Component{
       for (ally of second){ // add points if allies are on team
         if(fighterAllies.includes(ally)) teamTwoTally+=25;
       }
-      for (enemy of second){ // add points if allies are on team
+      for (enemy of second){ // subtract points if enemies are on other team
         if(fighterEnemies.includes(enemy)) teamTwoTally-=25;
       }
     }

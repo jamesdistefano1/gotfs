@@ -19,6 +19,7 @@ code {
   width: 200px;
   position: relative;
   left: 100px;
+  text-align: center;
 }
 
 .characters{
@@ -29,7 +30,7 @@ code {
 .square{
   border: 1px;
   margin-top: 50px;
-  margin-left: 20px;
+  margin-left: 100px;
   margin-bottom: 2px;
   height: 150px;
   width: 150px;

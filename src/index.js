@@ -20,12 +20,9 @@ class App extends React.Component{
     return(
       <div>
         <div className="characters">
-          <Character name="Tyrion Lannister"/>
-          <Character name="Jaime Lannister"/>
-          <Character name="Brienne of Tarth"/>
-          <Character name="Arya Stark"/>
-          <Character name="Jon Snow"/>
-          <Character name="The Night King"/>
+          {
+            data.map(char => <Character name={char.name}/>)
+          }
         </div>
         <div className="generator">
           <Generator/>
@@ -42,10 +39,13 @@ class Character extends React.Component{
 
     };
   }
+  handleClick(){
+    
+  }
   render(){
     return(
       <div>
-        <button className="square">{this.props.name}</button>
+        <button className="square" onClick="handleClick">{this.props.name}</button>
       </div>
     );
   }
